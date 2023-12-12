@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>SAP</title>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {background-color: #000; /* Negro */
+          color: #000; /* Blanco */
+          font-family: 'Cambria', cursive;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;}
+
+    h1, h2, h3 {color: #ff66b2; /* Rosa pastel */
+                text-align: center;}
+
+    .btn-info {background-color: #ff66b2; /* Rosa pastel */
+               color: #000; /* Negro */
+               border: 1px solid #ff66b2; /* Rosa pastel */
+               display: block;
+               margin: 0 auto;
+               text-align: center;}
+
+    .btn-info:hover {background-color: #cc0077; /* Rosa pastel más oscuro */
+                     border: 1px solid #cc0077; /* Rosa pastel más oscuro */}
+
+    p {color: #000; /* Rosa pastel */
+       text-align: center;}
+
+    .container {background-color: #fff; /* Blanco */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 30%;}
+</style>
+<body>
+    <div class="container">
+        <p>
+            <h2>Datos Cliente</h2>
+            Nombre: {{cliente.nombre}}<br>
+            Apellido: {{cliente.apellido}}<br>
+            Correo: {{cliente.correo}}<br>
+            Telefono: {{cliente.telefono}}<br>
+            Direccion: {{cliente.direccion}}<br>
+            Estado: {% if cliente.activo %}
+                Activo
+                {% else %}
+                Inactivo
+                {% endif %}<br>
+
+        <h2>Detalle de Pedido</h2>
+        Nombre: {{cliente.tipo_producto}}<br>
+        Fecha del pedido: {{cliente.fecha_pedido}}<br>
+        <a href="{%url 'inicio'%}" class="btn btn-info">Regresar <i class="fa-solid fa-arrow-left"></i></a>
+
+    </div>
+</body>
+</html>

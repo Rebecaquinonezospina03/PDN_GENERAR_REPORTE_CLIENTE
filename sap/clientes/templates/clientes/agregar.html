@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Cliente</title>
+    <style>
+        body {background-color: #000; /* Gris oscuro */
+              color: #6b5c5c; /* Rosa pastel */
+              font-family: 'Cambria', cursive;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              margin: 0;}
+
+        h1 {color: #ff66b2; /* Rosa pastel */}
+
+        form {background-color: #fff;
+              padding: 20px;
+              border-radius: 10px;
+              margin-top: 20px;
+              text-align: center;}
+
+        input[type="submit"] {background-color: #ff66b2; /* Rosa pastel */
+                              color: #000;
+                              border: 1px solid #ff66b2; /* Rosa pastel */
+                              padding: 10px;
+                              cursor: pointer;}
+
+        input[type="submit"]:hover {background-color: #cc0077; /* Rosa pastel más oscuro */
+                                    border: 1px solid #cc0077; /* Rosa pastel más oscuro */}
+
+        a {color: #ff66b2; /* Rosa pastel */
+           text-decoration: none;
+           display: block;
+           margin-top: 10px;}
+
+        a:hover {color: #cc0077; /* Rosa pastel más oscuro */
+        }
+    </style>
+</head>
+<body>
+    <form method="POST">
+        <h1>Agregar Persona</h1>
+        <table>{{formulario}}</table>
+        <input type="submit" value="Grabar">
+        {% csrf_token %}
+    </form>
+    <a href="{% url 'inicio' %}">Regresar</a>
+</body>
+</html>
